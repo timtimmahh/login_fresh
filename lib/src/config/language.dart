@@ -23,8 +23,8 @@ class LoginFreshWords {
       this.hintLoginPassword = 'Password',
       this.recoverPassword = 'Recover Password',
       this.messageRecoverPassword =
-          'To recover the password, enter the email and press send email, you will receive an email so you can update your password. Only available for accounts created by username and password',
-      this.hintLoginUser = 'Username or email',
+          'To recover the password, enter the email and press the button, you will receive an email so you can update your password. Only available for accounts created by username and password',
+      this.hintLoginUser = 'Username or Email',
       this.login = 'Login',
       this.exploreApp = 'Explore App',
       this.notAccount = 'You do not have an account?',
