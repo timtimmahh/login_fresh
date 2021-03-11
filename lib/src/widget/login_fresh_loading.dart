@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class LoadingLoginFresh extends StatelessWidget {
-  final String textLoading;
-  final Color colorText;
-  final double elevation;
+  final String? textLoading;
+  final Color? colorText;
+  final double? elevation;
 
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   LoadingLoginFresh(
       {this.textLoading, this.colorText, this.backgroundColor, this.elevation});
@@ -35,7 +35,7 @@ class LoadingLoginFresh extends StatelessWidget {
                     value: null,
                     strokeWidth: 2.0,
                     valueColor:
-                        AlwaysStoppedAnimation<Color>(this.backgroundColor),
+                        AlwaysStoppedAnimation<Color?>(this.backgroundColor),
                   ),
                 ),
               ),
@@ -43,7 +43,7 @@ class LoadingLoginFresh extends StatelessWidget {
                 margin: const EdgeInsets.only(top: 5.0),
                 child: new Center(
                   child: new Text(
-                    this.textLoading,
+                    this.textLoading!,
                     style: new TextStyle(color: this.colorText),
                   ),
                 ),

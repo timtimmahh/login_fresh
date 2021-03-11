@@ -1,10 +1,10 @@
 class SignUpModel {
-  String email;
-  String password;
-  String repeatPassword;
+  String? email;
+  String? password;
+  String? repeatPassword;
 
-  String name;
-  String surname;
+  String? name;
+  String? surname;
 
   SignUpModel(
       {this.email,

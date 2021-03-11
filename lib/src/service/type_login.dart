@@ -6,8 +6,8 @@ class TypeLogo {
 }
 
 class LoginFreshTypeLoginModel {
-  Function callFunction;
-  String logo;
+  Function? callFunction;
+  String? logo;
 
   LoginFreshTypeLoginModel({this.logo, this.callFunction});
 }

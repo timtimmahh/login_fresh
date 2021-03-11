@@ -8,43 +8,43 @@ import '../service/type_login.dart';
 class LoginFresh extends StatefulWidget {
 
   /// color main login
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   ///color of card where are the login icons
-  final Color cardColor;
+  final Color? cardColor;
 
   /// color of text in login
-  final Color textColor;
+  final Color? textColor;
 
   /// url logo main in login
   final String pathLogo;
 
   ///button when you want to avoid the login and go to the application content
-  final bool isExploreApp;
+  final bool? isExploreApp;
 
   ///function when you want to avoid the login and go to the application content
-  final Function functionExploreApp;
+  final Function? functionExploreApp;
 
   ///widget to put a footer in your login
-  final bool isFooter;
+  final bool? isFooter;
 
   /// custom widget footer
-  final Widget widgetFooter;
+  final Widget? widgetFooter;
 
   /// list type login import in login
-  final List<LoginFreshTypeLoginModel> typeLoginModel;
+  final List<LoginFreshTypeLoginModel>? typeLoginModel;
 
   /// is signUp in login
-  final bool isSignUp;
+  final bool? isSignUp;
 
   ///widget signUp
-  final Widget widgetSignUp;
+  final Widget? widgetSignUp;
 
   //model of key words used in login
-  LoginFreshWords keyWord;
+  final LoginFreshWords? keyWord;
 
   LoginFresh(
-      {@required this.pathLogo,
+      {required this.pathLogo,
       this.typeLoginModel,
       this.isExploreApp,
       this.functionExploreApp,
@@ -55,7 +55,8 @@ class LoginFresh extends StatefulWidget {
       this.backgroundColor,
       this.cardColor,
       this.textColor,
-      this.keyWord});
+      LoginFreshWords? keyWord,
+  }) : keyWord = keyWord ?? LoginFreshWords();
 
   @override
   _LoginFreshState createState() => _LoginFreshState();
@@ -64,8 +65,6 @@ class LoginFresh extends StatefulWidget {
 class _LoginFreshState extends State<LoginFresh> {
   @override
   Widget build(BuildContext context) {
-    widget.keyWord = widget.keyWord ?? LoginFreshWords();
-
     return Stack(
       children: [
         Container(
@@ -119,7 +118,7 @@ class _LoginFreshState extends State<LoginFresh> {
                   ),
                   (widget.isFooter == null || widget.isFooter == false)
                       ? SizedBox()
-                      : widget.widgetFooter
+                      : widget.widgetFooter!
                 ],
               ),
             ))
@@ -135,13 +134,13 @@ class _LoginFreshState extends State<LoginFresh> {
           textAlign: TextAlign.center,
           text: TextSpan(children: [
             TextSpan(
-                text: widget.keyWord.notAccount + '\n',
+                text: widget.keyWord!.notAccount + '\n',
                 style: TextStyle(
                     color: widget.textColor ?? Color(0xFF0F2E48),
                     fontWeight: FontWeight.normal,
                     fontSize: 15)),
             TextSpan(
-                text: widget.keyWord.signUp,
+                text: widget.keyWord!.signUp,
                 style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: widget.textColor ?? Color(0xFF0F2E48),
@@ -152,7 +151,7 @@ class _LoginFreshState extends State<LoginFresh> {
       ),
       onTap: () {
         Navigator.of(context).push(
-            MaterialPageRoute(builder: (_buildContext) => widget.widgetSignUp));
+            MaterialPageRoute(builder: (_buildContext) => widget.widgetSignUp!));
       },
     );
   }
@@ -161,10 +160,10 @@ class _LoginFreshState extends State<LoginFresh> {
     return (widget.isExploreApp == null || widget.isExploreApp == false)
         ? SizedBox()
         : GestureDetector(
-            onTap: widget.functionExploreApp,
+            onTap: widget.functionExploreApp as void Function()?,
             child: SizedBox(
                 height: MediaQuery.of(context).size.height * 0.07,
-                width: (widget.typeLoginModel.length > 3)
+                width: (widget.typeLoginModel!.length > 3)
                     ? MediaQuery.of(context).size.width * 0.90
                     : MediaQuery.of(context).size.width * 0.80,
                 child: Card(
@@ -177,7 +176,7 @@ class _LoginFreshState extends State<LoginFresh> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Center(
                           child: Text(
-                        widget.keyWord.exploreApp,
+                        widget.keyWord!.exploreApp,
                         style: TextStyle(
                             color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 15,
@@ -190,7 +189,7 @@ class _LoginFreshState extends State<LoginFresh> {
   SizedBox buildTypeLogin(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.1,
-      width: (widget.typeLoginModel.length > 3)
+      width: (widget.typeLoginModel!.length > 3)
           ? MediaQuery.of(context).size.width * 0.90
           : MediaQuery.of(context).size.width * 0.80,
       child: Card(
@@ -214,7 +213,7 @@ class _LoginFreshState extends State<LoginFresh> {
   Padding buildLoginWith() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Text(widget.keyWord.loginWith,
+      child: Text(widget.keyWord!.loginWith,
           style: TextStyle(
               color: widget.textColor ?? Color(0xFF0F2E48),
               fontSize: 16,
@@ -225,21 +224,21 @@ class _LoginFreshState extends State<LoginFresh> {
   List<Widget> getCardLogin() {
     List<Widget> list = [];
 
-    for (LoginFreshTypeLoginModel tlm in widget.typeLoginModel) {
+    for (LoginFreshTypeLoginModel tlm in widget.typeLoginModel!) {
       list.add(GestureDetector(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image(
             image: ExactAssetImage(
-              tlm.logo,
-              package: (tlm.logo.contains('assets/images_login_fresh_34_/'))
+              tlm.logo!,
+              package: (tlm.logo!.contains('assets/images_login_fresh_34_/'))
                   ? 'login_fresh'
                   : null,
             ),
           ),
         ),
         onTap: () {
-          tlm.callFunction(context);
+          tlm.callFunction!(context);
         },
       ));
     }

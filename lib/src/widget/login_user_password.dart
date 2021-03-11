@@ -4,25 +4,25 @@ import '../config/language.dart';
 import 'login_fresh_loading.dart';
 
 class LoginFreshUserAndPassword extends StatefulWidget {
-  final Color backgroundColor;
-  final String logo;
-  final Color textColor;
+  final Color? backgroundColor;
+  final String? logo;
+  final Color? textColor;
 
-  final bool isFooter;
-  final Widget widgetFooter;
+  final bool? isFooter;
+  final Widget? widgetFooter;
 
-  final bool isResetPassword;
-  final Widget widgetResetPassword;
+  final bool? isResetPassword;
+  final Widget? widgetResetPassword;
 
-  final bool isSignUp;
-  final Widget signUp;
+  final bool? isSignUp;
+  final Widget? signUp;
 
   final Function callLogin;
 
-  final LoginFreshWords loginFreshWords;
+  final LoginFreshWords? loginFreshWords;
 
   LoginFreshUserAndPassword(
-      {@required this.callLogin,
+      {required this.callLogin,
       this.backgroundColor,
       this.loginFreshWords,
       this.logo,
@@ -52,7 +52,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
 
   final bool isLoginRequest = false;
 
-  LoginFreshWords loginFreshWords;
+  LoginFreshWords? loginFreshWords;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
           centerTitle: true,
           elevation: 0,
           title: Text(
-            this.loginFreshWords.login,
+            this.loginFreshWords!.login,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -94,7 +94,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                         child: Hero(
                           tag: 'hero-login',
                           child: Image.asset(
-                            widget.logo,
+                            widget.logo!,
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -179,7 +179,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                               borderSide: BorderSide(
                                   color: widget.backgroundColor ??
                                       Color(0xFFE7004C))),
-                          hintText: this.loginFreshWords.hintLoginUser)),
+                          hintText: this.loginFreshWords!.hintLoginUser)),
                 ),
                 Padding(
                   padding:
@@ -250,13 +250,13 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                               borderSide: BorderSide(
                                   color: widget.backgroundColor ??
                                       Color(0xFFE7004C))),
-                          hintText: this.loginFreshWords.hintLoginPassword)),
+                          hintText: this.loginFreshWords!.hintLoginPassword)),
                 ),
                 (this.isRequest)
                     ? Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: LoadingLoginFresh(
-                          textLoading: this.loginFreshWords.textLoading,
+                          textLoading: this.loginFreshWords!.textLoading,
                           colorText: widget.textColor,
                           backgroundColor: widget.backgroundColor,
                           elevation: 0,
@@ -285,7 +285,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                       horizontal: 10),
                                   child: Center(
                                       child: Text(
-                                    this.loginFreshWords.login,
+                                    this.loginFreshWords!.login,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 15,
@@ -311,7 +311,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                       fontWeight: FontWeight.normal,
                                       fontSize: 15)),
                               TextSpan(
-                                  text: this.loginFreshWords.recoverPassword,
+                                  text: this.loginFreshWords!.recoverPassword,
                                   style: TextStyle(
                                       decoration: TextDecoration.underline,
                                       color:
@@ -323,7 +323,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                         ),
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => widget.widgetResetPassword,
+                            builder: (context) => widget.widgetResetPassword!,
                           ));
                         },
                       ),
@@ -335,13 +335,13 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                       textAlign: TextAlign.center,
                       text: TextSpan(children: [
                         TextSpan(
-                            text: this.loginFreshWords.notAccount + ' \n',
+                            text: this.loginFreshWords!.notAccount + ' \n',
                             style: TextStyle(
                                 color: widget.textColor ?? Color(0xFF0F2E48),
                                 fontWeight: FontWeight.normal,
                                 fontSize: 15)),
                         TextSpan(
-                            text: this.loginFreshWords.signUp,
+                            text: this.loginFreshWords!.signUp,
                             style: TextStyle(
                                 decoration: TextDecoration.underline,
                                 color: widget.textColor ?? Color(0xFF0F2E48),
@@ -352,7 +352,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                   ),
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_buildContext) => widget.signUp));
+                        builder: (_buildContext) => widget.signUp!));
                   },
                 ),
               ],

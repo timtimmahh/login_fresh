@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import './login_fresh_loading.dart';
+import 'login_fresh_loading.dart';
 import '../config/language.dart';
 
 class LoginFreshResetPassword extends StatefulWidget {
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
-  final Color textColor;
+  final Color? textColor;
 
-  final LoginFreshWords loginFreshWords;
+  final LoginFreshWords? loginFreshWords;
 
   final String logo;
 
@@ -16,16 +16,16 @@ class LoginFreshResetPassword extends StatefulWidget {
 
   final isFooter;
 
-  final Widget widgetFooter;
+  final Widget? widgetFooter;
 
   LoginFreshResetPassword(
-      {@required this.funResetPassword,
+      {required this.funResetPassword,
       this.isFooter,
       this.widgetFooter,
       this.backgroundColor,
       this.textColor,
       this.loginFreshWords,
-      @required this.logo});
+      required this.logo});
 
   @override
   _LoginFreshResetPasswordState createState() =>
@@ -38,7 +38,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
   bool isRequest = false;
 
   final focus = FocusNode();
-  LoginFreshWords loginFreshWords;
+  LoginFreshWords? loginFreshWords;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
           centerTitle: true,
           elevation: 0,
           title: Text(
-            this.loginFreshWords.recoverPassword,
+            this.loginFreshWords!.recoverPassword,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -114,14 +114,14 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
-      children: <Widget>[
+      children: (<Widget?>[
         SizedBox(),
         Column(
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                loginFreshWords.messageRecoverPassword,
+                loginFreshWords!.messageRecoverPassword,
                 textAlign: TextAlign.justify,
                 style: TextStyle(
                     color: widget.textColor ?? Color(0xFF0F2E48), fontSize: 14),
@@ -163,13 +163,13 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
                           borderSide: BorderSide(
                               color:
                                   widget.backgroundColor ?? Color(0xFFE7004C))),
-                      hintText: this.loginFreshWords.hintLoginUser)),
+                      hintText: this.loginFreshWords!.hintLoginUser)),
             ),
             (this.isRequest)
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: LoadingLoginFresh(
-                      textLoading: this.loginFreshWords.textLoading,
+                      textLoading: this.loginFreshWords!.textLoading,
                       colorText: widget.textColor,
                       backgroundColor: widget.backgroundColor,
                       elevation: 0,
@@ -197,7 +197,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
                                     const EdgeInsets.symmetric(horizontal: 10),
                                 child: Center(
                                     child: Text(
-                                  this.loginFreshWords.recoverPassword,
+                                  this.loginFreshWords!.recoverPassword,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 15,
@@ -212,7 +212,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
         (widget.isFooter == null || widget.isFooter == false)
             ? SizedBox()
             : widget.widgetFooter
-      ],
+      ]) as List<Widget>,
     );
   }
 

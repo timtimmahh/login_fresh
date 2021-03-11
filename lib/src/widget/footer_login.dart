@@ -4,21 +4,21 @@ class LoginFreshFooter extends StatelessWidget {
   final String text;
   final String logo;
 
-  final Color textColor;
+  final Color? textColor;
 
   final Function funFooterLogin;
 
   LoginFreshFooter(
-      {@required this.text,
-      @required this.logo,
-      @required this.funFooterLogin,
+      {required this.text,
+      required this.logo,
+      required this.funFooterLogin,
       this.textColor});
 
   @override
   Widget build(BuildContext context) {
     return Center(
         child: GestureDetector(
-      onTap: this.funFooterLogin,
+      onTap: this.funFooterLogin as void Function()?,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(

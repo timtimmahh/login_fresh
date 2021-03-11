@@ -8,23 +8,23 @@ import '../service/sign_up_model.dart';
 
 
 class LoginFreshSignUp extends StatefulWidget {
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
-  final Color textColor;
+  final Color? textColor;
 
-  final LoginFreshWords loginFreshWords;
+  final LoginFreshWords? loginFreshWords;
 
   final Function funSignUp;
 
-  final bool isFooter;
+  final bool? isFooter;
 
-  final Widget widgetFooter;
+  final Widget? widgetFooter;
 
   final String logo;
 
   LoginFreshSignUp(
-      {@required this.funSignUp,
-      @required this.logo,
+      {required this.funSignUp,
+      required this.logo,
       this.isFooter,
       this.widgetFooter,
       this.textColor,
@@ -42,7 +42,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
 
   bool isNoVisiblePassword = true;
 
-  LoginFreshWords loginFreshWords;
+  LoginFreshWords? loginFreshWords;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
           centerTitle: true,
           elevation: 0,
           title: Text(
-            this.loginFreshWords.signUp,
+            this.loginFreshWords!.signUp,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
@@ -118,7 +118,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
+        children: (<Widget?>[
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -154,7 +154,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
-                            hintText: this.loginFreshWords.hintLoginUser)),
+                            hintText: this.loginFreshWords!.hintLoginUser)),
                   ),
                   Padding(
                     padding:
@@ -185,7 +185,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
-                            hintText: this.loginFreshWords.hintName)),
+                            hintText: this.loginFreshWords!.hintName)),
                   ),
                   Padding(
                     padding:
@@ -216,7 +216,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
-                            hintText: this.loginFreshWords.hintSurname)),
+                            hintText: this.loginFreshWords!.hintSurname)),
                   ),
                   Padding(
                     padding:
@@ -274,7 +274,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
-                            hintText: this.loginFreshWords.hintLoginPassword)),
+                            hintText: this.loginFreshWords!.hintLoginPassword)),
                   ),
                   Padding(
                     padding:
@@ -305,7 +305,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
                             hintText:
-                                this.loginFreshWords.hintSignUpRepeatPassword)),
+                                this.loginFreshWords!.hintSignUpRepeatPassword)),
                   )
                 ],
               ),
@@ -315,7 +315,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
               ? Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: LoadingLoginFresh(
-                    textLoading: this.loginFreshWords.textLoading,
+                    textLoading: this.loginFreshWords!.textLoading,
                     colorText: widget.textColor,
                     backgroundColor: widget.backgroundColor,
                     elevation: 0,
@@ -339,7 +339,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                             padding: const EdgeInsets.symmetric(horizontal: 10),
                             child: Center(
                                 child: Text(
-                              this.loginFreshWords.signUp,
+                              this.loginFreshWords!.signUp,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 15,
@@ -350,7 +350,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
           (widget.isFooter == null || widget.isFooter == false)
               ? SizedBox()
               : widget.widgetFooter
-        ]);
+        ]) as List<Widget>);
   }
 
   void setIsRequest(bool isRequest) {
