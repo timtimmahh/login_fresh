@@ -8,4 +8,5 @@
 - refactor code
 
 ## [2.0.0]
-- Migrating to null safety
+- Migrate to null safety
+- Update 'keyWord' param in LoginFresh to 'loginFreshWords'

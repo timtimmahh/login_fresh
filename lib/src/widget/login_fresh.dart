@@ -39,7 +39,7 @@ class LoginFresh extends StatefulWidget {
   final Widget? widgetSignUp;
 
   //model of key words used in login
-  final LoginFreshWords? keyWord;
+  final LoginFreshWords? loginFreshWords;
 
   LoginFresh({
     required this.pathLogo,
@@ -53,8 +53,8 @@ class LoginFresh extends StatefulWidget {
     this.backgroundColor,
     this.cardColor,
     this.textColor,
-    LoginFreshWords? keyWord,
-  }) : keyWord = keyWord ?? LoginFreshWords();
+    LoginFreshWords? loginFreshWords,
+  }) : loginFreshWords = loginFreshWords ?? LoginFreshWords();
 
   @override
   _LoginFreshState createState() => _LoginFreshState();
@@ -132,13 +132,13 @@ class _LoginFreshState extends State<LoginFresh> {
           textAlign: TextAlign.center,
           text: TextSpan(children: [
             TextSpan(
-                text: widget.keyWord!.notAccount + '\n',
+                text: widget.loginFreshWords!.notAccount + '\n',
                 style: TextStyle(
                     color: widget.textColor ?? Color(0xFF0F2E48),
                     fontWeight: FontWeight.normal,
                     fontSize: 15)),
             TextSpan(
-                text: widget.keyWord!.signUp,
+                text: widget.loginFreshWords!.signUp,
                 style: TextStyle(
                     decoration: TextDecoration.underline,
                     color: widget.textColor ?? Color(0xFF0F2E48),
@@ -174,7 +174,7 @@ class _LoginFreshState extends State<LoginFresh> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Center(
                           child: Text(
-                        widget.keyWord!.exploreApp,
+                        widget.loginFreshWords!.exploreApp,
                         style: TextStyle(
                             color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 15,
@@ -211,7 +211,7 @@ class _LoginFreshState extends State<LoginFresh> {
   Padding buildLoginWith() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Text(widget.keyWord!.loginWith,
+      child: Text(widget.loginFreshWords!.loginWith,
           style: TextStyle(
               color: widget.textColor ?? Color(0xFF0F2E48),
               fontSize: 16,
