@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'login_fresh_loading.dart';
+
 import '../config/language.dart';
 import '../service/sign_up_model.dart';
-
-
-
-
+import 'login_fresh_loading.dart';
 
 class LoginFreshSignUp extends StatefulWidget {
   final Color? backgroundColor;
@@ -304,8 +301,9 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 borderSide: BorderSide(
                                     color: widget.backgroundColor ??
                                         Color(0xFFE7004C))),
-                            hintText:
-                                this.loginFreshWords!.hintSignUpRepeatPassword)),
+                            hintText: this
+                                .loginFreshWords!
+                                .hintSignUpRepeatPassword)),
                   )
                 ],
               ),

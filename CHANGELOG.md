@@ -6,3 +6,6 @@
 - Resize image logos
 - add support web
 - refactor code
+
+## [2.0.0]
+- Migrating to null safety

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../config/language.dart';
@@ -6,7 +5,6 @@ import '../service/type_login.dart';
 
 /// Widget main with social networks
 class LoginFresh extends StatefulWidget {
-
   /// color main login
   final Color? backgroundColor;
 
@@ -43,19 +41,19 @@ class LoginFresh extends StatefulWidget {
   //model of key words used in login
   final LoginFreshWords? keyWord;
 
-  LoginFresh(
-      {required this.pathLogo,
-      this.typeLoginModel,
-      this.isExploreApp,
-      this.functionExploreApp,
-      this.isSignUp,
-      this.widgetSignUp,
-      this.isFooter,
-      this.widgetFooter,
-      this.backgroundColor,
-      this.cardColor,
-      this.textColor,
-      LoginFreshWords? keyWord,
+  LoginFresh({
+    required this.pathLogo,
+    this.typeLoginModel,
+    this.isExploreApp,
+    this.functionExploreApp,
+    this.isSignUp,
+    this.widgetSignUp,
+    this.isFooter,
+    this.widgetFooter,
+    this.backgroundColor,
+    this.cardColor,
+    this.textColor,
+    LoginFreshWords? keyWord,
   }) : keyWord = keyWord ?? LoginFreshWords();
 
   @override
@@ -150,8 +148,8 @@ class _LoginFreshState extends State<LoginFresh> {
         ),
       ),
       onTap: () {
-        Navigator.of(context).push(
-            MaterialPageRoute(builder: (_buildContext) => widget.widgetSignUp!));
+        Navigator.of(context).push(MaterialPageRoute(
+            builder: (_buildContext) => widget.widgetSignUp!));
       },
     );
   }

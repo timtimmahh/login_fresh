@@ -1,6 +1,6 @@
 name: login_fresh
 description: LoginFresh is a user-friendly design where you can incorporate functionalities such as signUp, reset password or login with social networks
-version: 1.0.8
+version: 2.0.0
 authors:
   - Cristhian Hernandez <cristhian.hernandez@softnux.io>
 
