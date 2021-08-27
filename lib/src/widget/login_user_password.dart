@@ -5,9 +5,10 @@ import '../config/language.dart';
 import 'login_fresh_loading.dart';
 
 class LoginFreshUserAndPassword extends StatefulWidget {
-  final Color? backgroundColor;
+  // final Color? backgroundColor;
   final String? logo;
-  final Color? textColor;
+
+  // final Color? textColor;
   final TextInputType? loginKeyboardType;
 
   final bool? isFooter;
@@ -29,7 +30,7 @@ class LoginFreshUserAndPassword extends StatefulWidget {
   LoginFreshUserAndPassword(
       {required this.callLogin,
       required this.onLoginSuccess,
-      this.backgroundColor,
+        // this.backgroundColor,
       this.loginFreshWords,
       this.logo,
       this.isFooter,
@@ -38,7 +39,7 @@ class LoginFreshUserAndPassword extends StatefulWidget {
       this.widgetResetPassword,
       this.isSignUp,
       this.signUp,
-      this.textColor,
+        // this.textColor,
       this.loginKeyboardType});
 
   @override
@@ -66,7 +67,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
             iconTheme: IconThemeData(color: Colors.white),
-            backgroundColor: widget.backgroundColor ?? Color(0xFFE7004C),
+            // backgroundColor: widget.backgroundColor ?? Color(0xFFE7004C),
             centerTitle: true,
             elevation: 0,
             title: Text(
@@ -85,7 +86,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.7,
                 width: MediaQuery.of(context).size.width,
-                color: widget.backgroundColor ?? Color(0xFFE7004C),
+                // color: widget.backgroundColor ?? Color(0xFFE7004C),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -142,7 +143,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
+                children: <Widget?>[
                   SizedBox(
                     height: 30,
                   ),
@@ -153,7 +154,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                         keyboardType: widget.loginKeyboardType ??
                             TextInputType.emailAddress,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                            // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 14),
                         autofocus: false,
                         onSubmitted: (v) {
@@ -183,8 +184,8 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide: BorderSide(
-                                    color: widget.backgroundColor ??
-                                        Color(0xFFE7004C))),
+                                    // color: widget.backgroundColor ?? Color(0xFFE7004C)
+                                    )),
                             hintText: this.loginFreshWords!.hintLoginUser)),
                   ),
                   Padding(
@@ -195,7 +196,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                         controller: this._textEditingControllerPassword,
                         obscureText: this.isNoVisiblePassword,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                          // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 14),
                         onSubmitted: _tryLogin,
                         decoration: InputDecoration(
@@ -250,8 +251,8 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide: BorderSide(
-                                    color: widget.backgroundColor ??
-                                        Color(0xFFE7004C))),
+                                    // color: widget.backgroundColor ?? Color(0xFFE7004C)
+                                    )),
                             hintText: this.loginFreshWords!.hintLoginPassword)),
                   ),
                   (this.isRequest)
@@ -259,8 +260,8 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                           padding: const EdgeInsets.all(8.0),
                           child: LoadingLoginFresh(
                             textLoading: this.loginFreshWords!.textLoading,
-                            colorText: widget.textColor,
-                            backgroundColor: widget.backgroundColor,
+                            // colorText: widget.textColor,
+                            // backgroundColor: widget.backgroundColor,
                             elevation: 0,
                           ),
                         )
@@ -274,8 +275,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(40),
                                   ),
-                                  color: widget.backgroundColor ??
-                                      Color(0xFFE7004C),
+                                  // color: widget.backgroundColor ?? Color(0xFFE7004C),
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 10),
@@ -302,16 +302,14 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                 TextSpan(
                                     text: '',
                                     style: TextStyle(
-                                        color: widget.textColor ??
-                                            Color(0xFF0F2E48),
+                                      // color: widget.textColor ?? Color(0xFF0F2E48),
                                         fontWeight: FontWeight.normal,
                                         fontSize: 15)),
                                 TextSpan(
                                     text: this.loginFreshWords!.recoverPassword,
                                     style: TextStyle(
                                         decoration: TextDecoration.underline,
-                                        color: widget.textColor ??
-                                            Color(0xFF0F2E48),
+                                        // color: widget.textColor ?? Color(0xFF0F2E48),
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16)),
                               ]),
@@ -323,35 +321,38 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                             ));
                           },
                         ),
-                  GestureDetector(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 15, horizontal: 10),
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(children: [
-                          TextSpan(
-                              text: this.loginFreshWords!.notAccount + ' \n',
-                              style: TextStyle(
-                                  color: widget.textColor ?? Color(0xFF0F2E48),
-                                  fontWeight: FontWeight.normal,
+                  (widget.isSignUp ?? true)
+                      ? GestureDetector(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 15, horizontal: 10),
+                            child: RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(children: [
+                                TextSpan(
+                                    text: this.loginFreshWords!.notAccount +
+                                        ' \n',
+                                    style: TextStyle(
+                                        // color: widget.textColor ?? Color(0xFF0F2E48),
+                                        fontWeight: FontWeight.normal,
                                   fontSize: 15)),
                           TextSpan(
                               text: this.loginFreshWords!.signUp,
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
-                                  color: widget.textColor ?? Color(0xFF0F2E48),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16)),
-                        ]),
-                      ),
-                    ),
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_buildContext) => widget.signUp!));
-                    },
-                  ),
-                ],
+                                        // color: widget.textColor ?? Color(0xFF0F2E48),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16)),
+                              ]),
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (_buildContext) => widget.signUp!));
+                          },
+                        )
+                      : null,
+                ].whereType<Widget>().toList(),
               ),
             ),
           ),
