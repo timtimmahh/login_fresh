@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 
 import '../config/language.dart';
@@ -17,12 +18,16 @@ class LoginFreshUserAndPassword extends StatefulWidget {
   final bool? isSignUp;
   final Widget? signUp;
 
-  final Function callLogin;
+  final Future<String?> Function(
+      BuildContext context, String user, String password) callLogin;
 
   final LoginFreshWords? loginFreshWords;
 
+  final void Function() onLoginSuccess;
+
   LoginFreshUserAndPassword(
       {required this.callLogin,
+      required this.onLoginSuccess,
       this.backgroundColor,
       this.loginFreshWords,
       this.logo,
@@ -191,13 +196,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                       style: TextStyle(
                           color: widget.textColor ?? Color(0xFF0F2E48),
                           fontSize: 14),
-                      onSubmitted: (value) {
-                        widget.callLogin(
-                            context,
-                            setIsRequest,
-                            this._textEditingControllerUser.text,
-                            this._textEditingControllerPassword.text);
-                      },
+                      onSubmitted: _tryLogin,
                       decoration: InputDecoration(
                           prefixIcon: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -263,13 +262,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                         ),
                       )
                     : GestureDetector(
-                        onTap: () {
-                          widget.callLogin(
-                              context,
-                              setIsRequest,
-                              this._textEditingControllerUser.text,
-                              this._textEditingControllerPassword.text);
-                        },
+                        onTap: _tryLogin,
                         child: SizedBox(
                             height: MediaQuery.of(context).size.height * 0.07,
                             width: MediaQuery.of(context).size.width * 0.7,
@@ -367,6 +360,30 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
         ),
       ],
     );
+  }
+
+  void _tryLogin([String? _unused]) {
+    setIsRequest(true);
+    widget
+        .callLogin(context, this._textEditingControllerUser.text,
+            this._textEditingControllerPassword.text)
+        .then((value) {
+      if (value == null)
+        widget.onLoginSuccess();
+      else {
+        setIsRequest(false);
+        Flushbar(
+          title: 'Error',
+          message: value,
+          icon: Icon(Icons.error, size: 28.0, color: Colors.white),
+          duration: const Duration(seconds: 4),
+          backgroundGradient: LinearGradient(
+            colors: [Colors.red[600]!, Colors.red[400]!],
+          ),
+          onTap: (flushbar) => flushbar.dismiss(),
+        ).show(context);
+      }
+    });
   }
 
   void setIsRequest(bool isRequest) {
