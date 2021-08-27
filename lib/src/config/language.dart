@@ -1,6 +1,7 @@
 class LoginFreshWords {
   String loginWith;
-  String login;
+  String loginTitle;
+  String loginButtonText;
   String exploreApp;
   String notAccount;
   String signUp;
@@ -17,6 +18,7 @@ class LoginFreshWords {
 
   LoginFreshWords(
       {this.loginWith = 'Login With',
+      this.loginTitle = 'Login',
       this.hintName = 'Name',
       this.hintSurname = 'Surname',
       this.hintSignUpRepeatPassword = 'Repeat Password',
@@ -25,7 +27,7 @@ class LoginFreshWords {
       this.messageRecoverPassword =
           'To recover the password, enter the email and press the button, you will receive an email so you can update your password. Only available for accounts created by username and password',
       this.hintLoginUser = 'Username or Email',
-      this.login = 'Login',
+      this.loginButtonText = 'Login',
       this.exploreApp = 'Explore App',
       this.notAccount = 'You do not have an account?',
       this.signUp = 'Sign Up',
