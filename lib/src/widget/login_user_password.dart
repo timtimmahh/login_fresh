@@ -66,7 +66,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-            iconTheme: IconThemeData(color: Colors.white),
+            // iconTheme: IconThemeData(color: Colors.white),
             // backgroundColor: widget.backgroundColor ?? Color(0xFFE7004C),
             centerTitle: true,
             elevation: 0,
@@ -75,7 +75,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                  color: Colors.white,
+                // color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             )),
@@ -175,8 +175,8 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                 borderSide:
                                     BorderSide(color: Color(0xFFAAB5C3))),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide:
@@ -242,8 +242,8 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                 borderSide:
                                     BorderSide(color: Color(0xFFAAB5C3))),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide:
@@ -283,7 +283,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                         child: Text(
                                       this.loginFreshWords!.loginButtonText,
                                       style: TextStyle(
-                                          color: Colors.white,
+                                        // color: Colors.white,
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold),
                                     )),
