@@ -31,7 +31,7 @@ class LoginFreshFooter extends StatelessWidget {
               child: Text(
                 this.text + '  ',
                 style: TextStyle(
-                  color: this.textColor ?? Color(0xFF0F2E48),
+                  // color: this.textColor ?? Color(0xFF0F2E48),
                   fontSize: 13,
                 ),
               ),

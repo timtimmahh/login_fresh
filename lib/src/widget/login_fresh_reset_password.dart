@@ -47,7 +47,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
         : widget.loginFreshWords;
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          // iconTheme: IconThemeData(color: Colors.white),
           backgroundColor: widget.backgroundColor ?? Color(0xFFE7004C),
           centerTitle: true,
           elevation: 0,
@@ -56,7 +56,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                /*color: Colors.white, */fontWeight: FontWeight.bold, fontSize: 18),
           )),
       body: Stack(
         children: <Widget>[
@@ -96,7 +96,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
               height: MediaQuery.of(context).size.height * 0.7,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
-                  color: Color(0xFFF3F3F5),
+                  // color: Color(0xFFF3F3F5),
                   borderRadius: new BorderRadius.only(
                     topLeft: const Radius.circular(50.0),
                     topRight: const Radius.circular(50.0),
@@ -123,8 +123,8 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
               child: Text(
                 loginFreshWords!.messageRecoverPassword,
                 textAlign: TextAlign.justify,
-                style: TextStyle(
-                    color: widget.textColor ?? Color(0xFF0F2E48), fontSize: 14),
+                style: TextStyle(/*
+                    color: widget.textColor ?? Color(0xFF0F2E48), */fontSize: 14),
               ),
             ),
             Padding(
@@ -133,7 +133,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
                   controller: this._textEditingControllerUser,
                   keyboardType: TextInputType.emailAddress,
                   style: TextStyle(
-                      color: widget.textColor ?? Color(0xFF0F2E48),
+                      // color: widget.textColor ?? Color(0xFF0F2E48),
                       fontSize: 14),
                   autofocus: false,
                   onSubmitted: (v) {
@@ -151,13 +151,13 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
                       ),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(color: Color(0xFFAAB5C3))),
+                          /*borderSide: BorderSide(color: Color(0xFFAAB5C3))*/),
                       filled: true,
-                      fillColor: Color(0xFFF3F3F5),
-                      focusColor: Color(0xFFF3F3F5),
+                      // fillColor: Color(0xFFF3F3F5),
+                      // focusColor: Color(0xFFF3F3F5),
                       focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
-                          borderSide: BorderSide(color: Color(0xFFAAB5C3))),
+                          /*borderSide: BorderSide(color: Color(0xFFAAB5C3))*/),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                           borderSide: BorderSide(
@@ -199,7 +199,7 @@ class _LoginFreshResetPasswordState extends State<LoginFreshResetPassword> {
                                     child: Text(
                                   this.loginFreshWords!.recoverPassword,
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      // color: Colors.white,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold),
                                 )),

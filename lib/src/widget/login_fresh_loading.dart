@@ -21,7 +21,7 @@ class LoadingLoginFresh extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
           ),
-          color: Color(0xFFF3F3F5),
+          // color: Color(0xFFF3F3F5),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,

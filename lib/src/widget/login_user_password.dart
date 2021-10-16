@@ -75,21 +75,21 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                // color: Colors.white,
+                  // color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 18),
             )),
-        body: Stack(
+        body: Column(
           children: <Widget>[
-            Align(
-              alignment: Alignment.topCenter,
-              child: Container(
+            // Align(
+            //   alignment: Alignment.topCenter,
+              /*child: */Container(
                 height: MediaQuery.of(context).size.height * 0.7,
                 width: MediaQuery.of(context).size.width,
                 // color: widget.backgroundColor ?? Color(0xFFE7004C),
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  // mainAxisSize: MainAxisSize.max,
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Column(
@@ -110,27 +110,27 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                   ],
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
+            // ),
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+              /*child: */Container(
                 height: MediaQuery.of(context).size.height * 0.7,
                 width: MediaQuery.of(context).size.width,
                 decoration: new BoxDecoration(
-                    color: Color(0xFFF3F3F5),
+                    // color: Color(0xFFF3F3F5),
                     borderRadius: new BorderRadius.only(
                       topLeft: const Radius.circular(50.0),
                       topRight: const Radius.circular(50.0),
                     )),
                 child: buildBody(),
               ),
-            ),
+            // ),
           ],
         ),
       );
 
   Widget buildBody() => Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -172,15 +172,15 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                             ),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
                             // fillColor: Color(0xFFF3F3F5),
                             // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide: BorderSide(
@@ -239,15 +239,15 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                       )),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
                             // fillColor: Color(0xFFF3F3F5),
                             // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide: BorderSide(
@@ -283,7 +283,7 @@ class _LoginFreshUserAndPasswordState extends State<LoginFreshUserAndPassword> {
                                         child: Text(
                                       this.loginFreshWords!.loginButtonText,
                                       style: TextStyle(
-                                        // color: Colors.white,
+                                          // color: Colors.white,
                                           fontSize: 15,
                                           fontWeight: FontWeight.bold),
                                     )),

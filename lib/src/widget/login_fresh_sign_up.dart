@@ -48,7 +48,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
         : widget.loginFreshWords;
     return Scaffold(
       appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.white),
+          /*iconTheme: IconThemeData(color: Colors.white),*/
           backgroundColor: widget.backgroundColor ?? Color(0xFFE7004C),
           centerTitle: true,
           elevation: 0,
@@ -57,7 +57,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                /*color: Colors.white, */fontWeight: FontWeight.bold, fontSize: 18),
           )),
       body: Stack(
         children: <Widget>[
@@ -97,7 +97,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
               height: MediaQuery.of(context).size.height * 0.7,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
-                  color: Color(0xFFF3F3F5),
+                  /*color: Color(0xFFF3F3F5),*/
                   borderRadius: new BorderRadius.only(
                     topLeft: const Radius.circular(50.0),
                     topRight: const Radius.circular(50.0),
@@ -130,22 +130,22 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                           this.signUpModel.email = value;
                         },
                         keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                        style: TextStyle(/*
+                            color: widget.textColor ?? Color(0xFF0F2E48),*/
                             fontSize: 14),
                         autofocus: false,
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide(
@@ -162,21 +162,21 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                         },
                         keyboardType: TextInputType.text,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                            // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 14),
                         autofocus: false,
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide(
@@ -199,15 +199,15 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide(
@@ -224,7 +224,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                         },
                         obscureText: this.isNoVisiblePassword,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                            // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 14),
                         decoration: InputDecoration(
                             suffixIcon: GestureDetector(
@@ -257,15 +257,15 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                       )),
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide(
@@ -282,20 +282,20 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                         },
                         obscureText: this.isNoVisiblePassword,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                            // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 14),
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             filled: true,
-                            fillColor: Color(0xFFF3F3F5),
-                            focusColor: Color(0xFFF3F3F5),
+                            // fillColor: Color(0xFFF3F3F5),
+                            // focusColor: Color(0xFFF3F3F5),
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
-                                borderSide:
-                                    BorderSide(color: Color(0xFFAAB5C3))),
+                                /*borderSide:
+                                    BorderSide(color: Color(0xFFAAB5C3))*/),
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(15),
                                 borderSide: BorderSide(
@@ -339,7 +339,7 @@ class _LoginFreshSignUpState extends State<LoginFreshSignUp> {
                                 child: Text(
                               this.loginFreshWords!.signUp,
                               style: TextStyle(
-                                  color: Colors.white,
+                                  // color: Colors.white,
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold),
                             )),

@@ -87,7 +87,7 @@ class _LoginFreshState extends State<LoginFresh> {
               height: MediaQuery.of(context).size.height * 0.55,
               width: MediaQuery.of(context).size.width,
               decoration: new BoxDecoration(
-                  color: widget.cardColor ?? Color(0xFFF3F3F5),
+                  // color: widget.cardColor ?? Color(0xFFF3F3F5),
                   borderRadius: new BorderRadius.only(
                     topLeft: const Radius.circular(50.0),
                     topRight: const Radius.circular(50.0),
@@ -134,14 +134,14 @@ class _LoginFreshState extends State<LoginFresh> {
             TextSpan(
                 text: widget.loginFreshWords!.notAccount + '\n',
                 style: TextStyle(
-                    color: widget.textColor ?? Color(0xFF0F2E48),
+                    // color: widget.textColor ?? Color(0xFF0F2E48),
                     fontWeight: FontWeight.normal,
                     fontSize: 15)),
             TextSpan(
                 text: widget.loginFreshWords!.signUp,
                 style: TextStyle(
                     decoration: TextDecoration.underline,
-                    color: widget.textColor ?? Color(0xFF0F2E48),
+                    // color: widget.textColor ?? Color(0xFF0F2E48),
                     fontWeight: FontWeight.bold,
                     fontSize: 16)),
           ]),
@@ -169,14 +169,14 @@ class _LoginFreshState extends State<LoginFresh> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40),
                     ),
-                    color: Colors.white,
+                    // color: Colors.white,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Center(
                           child: Text(
                         widget.loginFreshWords!.exploreApp,
                         style: TextStyle(
-                            color: widget.textColor ?? Color(0xFF0F2E48),
+                            // color: widget.textColor ?? Color(0xFF0F2E48),
                             fontSize: 15,
                             fontWeight: FontWeight.bold),
                       )),
@@ -195,7 +195,7 @@ class _LoginFreshState extends State<LoginFresh> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(40),
         ),
-        color: Colors.white,
+        // color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
@@ -213,7 +213,7 @@ class _LoginFreshState extends State<LoginFresh> {
       padding: const EdgeInsets.all(8.0),
       child: Text(widget.loginFreshWords!.loginWith,
           style: TextStyle(
-              color: widget.textColor ?? Color(0xFF0F2E48),
+              // color: widget.textColor ?? Color(0xFF0F2E48),
               fontSize: 16,
               fontWeight: FontWeight.bold)),
     );

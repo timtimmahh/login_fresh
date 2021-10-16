@@ -7,8 +7,8 @@ authors:
 homepage: https://github.com/Krysthyan/login_fresh
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=1.17.0"
+  sdk: '>=2.13.0 <3.0.0'
+#  flutter: ">=1.17.0"
 
 dependencies:
   another_flushbar: ^1.10.24
